@@ -15,7 +15,6 @@ import "ocidl.idl";
 	pointer_default(unique)
 ]
 interface ITheCalculator : IDispatch{
-	[id(1), helpstring("Adds two numbers")] HRESULT Add([in] int left, [in] int right);
 };
 [
 	uuid(C4456541-5B90-4051-88B5-5EC57A857ADF),

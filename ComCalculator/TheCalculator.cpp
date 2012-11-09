@@ -2,4 +2,3 @@
 
 #include "stdafx.h"
 #include "TheCalculator.h"
-
