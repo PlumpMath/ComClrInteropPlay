@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Fri Nov 09 21:29:52 2012
+/* at Fri Nov 09 21:38:50 2012
  */
 /* Compiler settings for ComCalculator.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
@@ -88,6 +88,11 @@ EXTERN_C const IID IID_ITheCalculator;
     ITheCalculator : public IDispatch
     {
     public:
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ int left,
+            /* [in] */ int right,
+            /* [retval][out] */ int *result) = 0;
+        
     };
     
     
@@ -146,6 +151,12 @@ EXTERN_C const IID IID_ITheCalculator;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ITheCalculator * This,
+            /* [in] */ int left,
+            /* [in] */ int right,
+            /* [retval][out] */ int *result);
+        
         END_INTERFACE
     } ITheCalculatorVtbl;
 
@@ -181,6 +192,9 @@ EXTERN_C const IID IID_ITheCalculator;
 #define ITheCalculator_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
+
+#define ITheCalculator_Add(This,left,right,result)	\
+    ( (This)->lpVtbl -> Add(This,left,right,result) ) 
 
 #endif /* COBJMACROS */
 

@@ -50,6 +50,7 @@ END_COM_MAP()
 	}
 
 public:
+	STDMETHOD(Add)(int left, int right, int* result);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(TheCalculator), CTheCalculator)
