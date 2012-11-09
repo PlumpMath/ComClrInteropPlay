@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComConsoleApp", "ComConsoleApp\ComConsoleApp.vcxproj", "{7B8E906D-CC18-41B5-86D9-7771AE653EC0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComCalculator", "ComCalculator\ComCalculator.vcxproj", "{E74AC4CB-2E36-499E-8D41-6240E26FDA6D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComCalculatorPS", "ComCalculator\ComCalculatorPS.vcxproj", "{2A9D2846-3622-4226-AC29-0F622336E331}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E74AC4CB-2E36-499E-8D41-6240E26FDA6D} = {E74AC4CB-2E36-499E-8D41-6240E26FDA6D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B8E906D-CC18-41B5-86D9-7771AE653EC0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B8E906D-CC18-41B5-86D9-7771AE653EC0}.Debug|Win32.Build.0 = Debug|Win32
+		{7B8E906D-CC18-41B5-86D9-7771AE653EC0}.Release|Win32.ActiveCfg = Release|Win32
+		{7B8E906D-CC18-41B5-86D9-7771AE653EC0}.Release|Win32.Build.0 = Release|Win32
+		{E74AC4CB-2E36-499E-8D41-6240E26FDA6D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E74AC4CB-2E36-499E-8D41-6240E26FDA6D}.Debug|Win32.Build.0 = Debug|Win32
+		{E74AC4CB-2E36-499E-8D41-6240E26FDA6D}.Release|Win32.ActiveCfg = Release|Win32
+		{E74AC4CB-2E36-499E-8D41-6240E26FDA6D}.Release|Win32.Build.0 = Release|Win32
+		{2A9D2846-3622-4226-AC29-0F622336E331}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2A9D2846-3622-4226-AC29-0F622336E331}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
