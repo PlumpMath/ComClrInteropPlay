@@ -5,7 +5,6 @@
 
 STDMETHODIMP CTheCalculator::Add(int left, int right, int* result)
 {
-	// TODO: Add your implementation code here
-
+	*result = left + right;
 	return S_OK;
 }

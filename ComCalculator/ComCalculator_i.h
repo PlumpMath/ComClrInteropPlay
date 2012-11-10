@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Fri Nov 09 21:38:50 2012
+/* at Sat Nov 10 09:49:28 2012
  */
 /* Compiler settings for ComCalculator.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
