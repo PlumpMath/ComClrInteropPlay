@@ -51,6 +51,7 @@ END_COM_MAP()
 
 public:
 	STDMETHOD(Add)(int left, int right, int* result);
+	STDMETHOD(Initialize)(ICalculatorApplication* application);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(TheCalculator), CTheCalculator)

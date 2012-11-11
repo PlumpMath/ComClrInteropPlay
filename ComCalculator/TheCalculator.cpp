@@ -5,6 +5,10 @@
 
 STDMETHODIMP CTheCalculator::Add(int left, int right, int* result)
 {
-	*result = left + right;
-	return S_OK;
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CTheCalculator::Initialize(ICalculatorApplication* application)
+{
+	return E_NOTIMPL;
 }

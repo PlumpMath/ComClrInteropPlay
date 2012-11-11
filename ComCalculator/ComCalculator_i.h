@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Sun Nov 11 10:32:50 2012
+/* at Sun Nov 11 10:46:39 2012
  */
 /* Compiler settings for ComCalculator.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
@@ -45,18 +45,18 @@
 
 /* Forward Declarations */ 
 
-#ifndef __ITheCalculator_FWD_DEFINED__
-#define __ITheCalculator_FWD_DEFINED__
-typedef interface ITheCalculator ITheCalculator;
-
-#endif 	/* __ITheCalculator_FWD_DEFINED__ */
-
-
 #ifndef __ICalculatorApplication_FWD_DEFINED__
 #define __ICalculatorApplication_FWD_DEFINED__
 typedef interface ICalculatorApplication ICalculatorApplication;
 
 #endif 	/* __ICalculatorApplication_FWD_DEFINED__ */
+
+
+#ifndef __ITheCalculator_FWD_DEFINED__
+#define __ITheCalculator_FWD_DEFINED__
+typedef interface ITheCalculator ITheCalculator;
+
+#endif 	/* __ITheCalculator_FWD_DEFINED__ */
 
 
 #ifndef __TheCalculator_FWD_DEFINED__
@@ -92,140 +92,6 @@ extern "C"{
 #endif 
 
 
-#ifndef __ITheCalculator_INTERFACE_DEFINED__
-#define __ITheCalculator_INTERFACE_DEFINED__
-
-/* interface ITheCalculator */
-/* [unique][nonextensible][dual][uuid][object] */ 
-
-
-EXTERN_C const IID IID_ITheCalculator;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("48A0E2FF-D8C8-4F4E-8389-0FD54E3BDC9A")
-    ITheCalculator : public IDispatch
-    {
-    public:
-        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Add( 
-            /* [in] */ int left,
-            /* [in] */ int right,
-            /* [retval][out] */ int *result) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ITheCalculatorVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ITheCalculator * This,
-            /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ITheCalculator * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ITheCalculator * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            ITheCalculator * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            ITheCalculator * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            ITheCalculator * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [range][in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            ITheCalculator * This,
-            /* [annotation][in] */ 
-            _In_  DISPID dispIdMember,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][in] */ 
-            _In_  LCID lcid,
-            /* [annotation][in] */ 
-            _In_  WORD wFlags,
-            /* [annotation][out][in] */ 
-            _In_  DISPPARAMS *pDispParams,
-            /* [annotation][out] */ 
-            _Out_opt_  VARIANT *pVarResult,
-            /* [annotation][out] */ 
-            _Out_opt_  EXCEPINFO *pExcepInfo,
-            /* [annotation][out] */ 
-            _Out_opt_  UINT *puArgErr);
-        
-        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
-            ITheCalculator * This,
-            /* [in] */ int left,
-            /* [in] */ int right,
-            /* [retval][out] */ int *result);
-        
-        END_INTERFACE
-    } ITheCalculatorVtbl;
-
-    interface ITheCalculator
-    {
-        CONST_VTBL struct ITheCalculatorVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ITheCalculator_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ITheCalculator_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ITheCalculator_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ITheCalculator_GetTypeInfoCount(This,pctinfo)	\
-    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
-
-#define ITheCalculator_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
-
-#define ITheCalculator_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
-
-#define ITheCalculator_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
-
-
-#define ITheCalculator_Add(This,left,right,result)	\
-    ( (This)->lpVtbl -> Add(This,left,right,result) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ITheCalculator_INTERFACE_DEFINED__ */
-
-
 #ifndef __ICalculatorApplication_INTERFACE_DEFINED__
 #define __ICalculatorApplication_INTERFACE_DEFINED__
 
@@ -243,6 +109,9 @@ EXTERN_C const IID IID_ICalculatorApplication;
     public:
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE LoadPlugin( 
             /* [in] */ BSTR progId) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *pVal) = 0;
         
     };
     
@@ -306,6 +175,10 @@ EXTERN_C const IID IID_ICalculatorApplication;
             ICalculatorApplication * This,
             /* [in] */ BSTR progId);
         
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            ICalculatorApplication * This,
+            /* [retval][out] */ BSTR *pVal);
+        
         END_INTERFACE
     } ICalculatorApplicationVtbl;
 
@@ -345,6 +218,9 @@ EXTERN_C const IID IID_ICalculatorApplication;
 #define ICalculatorApplication_LoadPlugin(This,progId)	\
     ( (This)->lpVtbl -> LoadPlugin(This,progId) ) 
 
+#define ICalculatorApplication_get_Name(This,pVal)	\
+    ( (This)->lpVtbl -> get_Name(This,pVal) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -354,6 +230,150 @@ EXTERN_C const IID IID_ICalculatorApplication;
 
 
 #endif 	/* __ICalculatorApplication_INTERFACE_DEFINED__ */
+
+
+#ifndef __ITheCalculator_INTERFACE_DEFINED__
+#define __ITheCalculator_INTERFACE_DEFINED__
+
+/* interface ITheCalculator */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ITheCalculator;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("48A0E2FF-D8C8-4F4E-8389-0FD54E3BDC9A")
+    ITheCalculator : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialize( 
+            /* [in] */ ICalculatorApplication *application) = 0;
+        
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ int left,
+            /* [in] */ int right,
+            /* [retval][out] */ int *result) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ITheCalculatorVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ITheCalculator * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ITheCalculator * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ITheCalculator * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ITheCalculator * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ITheCalculator * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ITheCalculator * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ITheCalculator * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+            ITheCalculator * This,
+            /* [in] */ ICalculatorApplication *application);
+        
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ITheCalculator * This,
+            /* [in] */ int left,
+            /* [in] */ int right,
+            /* [retval][out] */ int *result);
+        
+        END_INTERFACE
+    } ITheCalculatorVtbl;
+
+    interface ITheCalculator
+    {
+        CONST_VTBL struct ITheCalculatorVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ITheCalculator_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ITheCalculator_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ITheCalculator_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ITheCalculator_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ITheCalculator_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ITheCalculator_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ITheCalculator_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ITheCalculator_Initialize(This,application)	\
+    ( (This)->lpVtbl -> Initialize(This,application) ) 
+
+#define ITheCalculator_Add(This,left,right,result)	\
+    ( (This)->lpVtbl -> Add(This,left,right,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ITheCalculator_INTERFACE_DEFINED__ */
 
 
 

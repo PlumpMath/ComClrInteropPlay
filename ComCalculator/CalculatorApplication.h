@@ -52,6 +52,7 @@ public:
 
 
 	STDMETHOD(LoadPlugin)(BSTR progId);
+	STDMETHOD(get_Name)(BSTR* pVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CalculatorApplication), CCalculatorApplication)
