@@ -22,6 +22,8 @@ interface ICalculatorPlugin;
 interface ICalculatorApplication : IDispatch{
 	[id(1)] HRESULT GetPlugin([in] BSTR progId, [out, retval] ICalculatorPlugin** result);
 	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[id(3)] HRESULT GetDomainOfManagedHelperInDefaultDomain([out,retval] BSTR* result);
+	[id(4)] HRESULT GetDomainOfManagedHelperInOtherDomain([out,retval] BSTR* result);
 };
 [
 	object,

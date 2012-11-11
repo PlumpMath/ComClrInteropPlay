@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Sun Nov 11 13:36:18 2012
+/* at Sun Nov 11 14:18:32 2012
  */
 /* Compiler settings for ComCalculator.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
@@ -124,6 +124,12 @@ EXTERN_C const IID IID_ICalculatorApplication;
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
             /* [retval][out] */ BSTR *pVal) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetDomainOfManagedHelperInDefaultDomain( 
+            /* [retval][out] */ BSTR *result) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetDomainOfManagedHelperInOtherDomain( 
+            /* [retval][out] */ BSTR *result) = 0;
+        
     };
     
     
@@ -191,6 +197,14 @@ EXTERN_C const IID IID_ICalculatorApplication;
             ICalculatorApplication * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetDomainOfManagedHelperInDefaultDomain )( 
+            ICalculatorApplication * This,
+            /* [retval][out] */ BSTR *result);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetDomainOfManagedHelperInOtherDomain )( 
+            ICalculatorApplication * This,
+            /* [retval][out] */ BSTR *result);
+        
         END_INTERFACE
     } ICalculatorApplicationVtbl;
 
@@ -232,6 +246,12 @@ EXTERN_C const IID IID_ICalculatorApplication;
 
 #define ICalculatorApplication_get_Name(This,pVal)	\
     ( (This)->lpVtbl -> get_Name(This,pVal) ) 
+
+#define ICalculatorApplication_GetDomainOfManagedHelperInDefaultDomain(This,result)	\
+    ( (This)->lpVtbl -> GetDomainOfManagedHelperInDefaultDomain(This,result) ) 
+
+#define ICalculatorApplication_GetDomainOfManagedHelperInOtherDomain(This,result)	\
+    ( (This)->lpVtbl -> GetDomainOfManagedHelperInOtherDomain(This,result) ) 
 
 #endif /* COBJMACROS */
 

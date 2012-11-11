@@ -21,6 +21,8 @@
 
             this.application = application;
 
+            Console.WriteLine(">> ManagedUIHelper created in Default Domain, when asked by an object in the Default Domain, reports its domain as: " + application.GetDomainOfManagedHelperInDefaultDomain());
+
             CreateSecondDomainAndAskApplicationToLoadPlugin();
         }
 
@@ -102,6 +104,8 @@
         public void SmuggleApplication(IntPtr punkApplication)
         {
             mApplication = (CalculatorApplication)Marshal.GetTypedObjectForIUnknown(punkApplication, typeof(CalculatorApplication));
+
+            Console.WriteLine(">> ManagedUIHelper created in Default Domain, when asked by an object in the Secondary Domain, reports its domain as: " + mApplication.GetDomainOfManagedHelperInDefaultDomain());
         }
 
         public void WreakHavoc()
