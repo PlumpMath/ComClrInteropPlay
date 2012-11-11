@@ -114,6 +114,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CalculatorApplication.cpp" />
     <ClCompile Include="ComCalculator.cpp" />
     <ClCompile Include="ComCalculator_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -138,6 +139,7 @@
     <ClCompile Include="TheCalculator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CalculatorApplication.h" />
     <ClInclude Include="ComCalculator_i.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Resource.h" />
@@ -152,6 +154,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CalculatorApplication.rgs" />
     <None Include="ComCalculator.def" />
     <None Include="ComCalculator.rgs" />
     <None Include="TheCalculator.rgs" />

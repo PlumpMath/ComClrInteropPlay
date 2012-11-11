@@ -1,0 +1,26 @@
+HKCR
+{
+	ComCalculator.CalculatorApplication.1 = s 'CalculatorApplication Class'
+	{
+		CLSID = s '{66AEC723-FC7D-4C9A-BD8C-1AA7F7568AB9}'
+	}
+	ComCalculator.CalculatorApplication = s 'CalculatorApplication Class'
+	{		
+		CurVer = s 'ComCalculator.CalculatorApplication.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {66AEC723-FC7D-4C9A-BD8C-1AA7F7568AB9} = s 'CalculatorApplication Class'
+		{
+			ProgID = s 'ComCalculator.CalculatorApplication.1'
+			VersionIndependentProgID = s 'ComCalculator.CalculatorApplication'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{C4456541-5B90-4051-88B5-5EC57A857ADF}'
+			Version = s '1.0'
+		}
+	}
+}

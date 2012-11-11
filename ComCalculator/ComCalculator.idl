@@ -18,6 +18,16 @@ interface ITheCalculator : IDispatch{
 	[id(1), helpstring("Adds two numbers")] HRESULT Add([in] int left, [in] int right, [out,retval] int* result);
 };
 [
+	object,
+	uuid(8388A2A1-AEFF-4F07-97B3-4F67A4E3F450),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICalculatorApplication : IDispatch{
+	[id(1)] HRESULT LoadPlugin([in] BSTR progId);
+};
+[
 	uuid(C4456541-5B90-4051-88B5-5EC57A857ADF),
 	version(1.0),
 ]
@@ -30,6 +40,13 @@ library ComCalculatorLib
 	coclass TheCalculator
 	{
 		[default] interface ITheCalculator;
+	};
+	[
+		uuid(66AEC723-FC7D-4C9A-BD8C-1AA7F7568AB9)		
+	]
+	coclass CalculatorApplication
+	{
+		[default] interface ICalculatorApplication;
 	};
 };
 

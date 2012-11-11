@@ -4,23 +4,16 @@
 #include "stdafx.h"
 #import "../ComCalculator/Debug/ComCalculator.tlb" no_namespace
 
-// using namespace ComCalculatorLib;
-
 int _tmain(int argc, _TCHAR* argv[])
 {
 	CoInitialize(NULL);
 
+	// Spin up the application
+	CComPtr<ICalculatorApplication> application;
+	application.CoCreateInstance(__uuidof(CalculatorApplication));
 
-	CComPtr<ITheCalculator> calc;
-
-	CLSID addin = __uuidof(TheCalculator);
-
-	HRESULT gotClassId = CLSIDFromProgID(L"ComPlugin.MyCalculator", &addin);
-
-	HRESULT gotCalc = calc.CoCreateInstance(addin, NULL, CLSCTX_ALL);
-
-	int result = calc->Add(3, 4);
-
+	// Load the plugin
+	application->LoadPlugin(OLESTR("ComPlugin.MyCalculator"));
 
 	return 0;
 }

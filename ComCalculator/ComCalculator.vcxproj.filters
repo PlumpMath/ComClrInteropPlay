@@ -34,6 +34,9 @@
     <ClCompile Include="TheCalculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CalculatorApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="TheCalculator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CalculatorApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ComCalculator.rc">
@@ -71,6 +77,9 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="TheCalculator.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CalculatorApplication.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
