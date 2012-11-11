@@ -14,7 +14,9 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	// Load the plugin
 	auto plugin1 = application->GetPlugin(OLESTR("ComPlugin.MyCalculator"));
-	auto plugin2 = application->GetPlugin(OLESTR("ComPlugin.MyCalculator"));
+	
+	// Get it to do some work
+	auto result = plugin1->Add(1, 5);
 
 	return 0;
 }

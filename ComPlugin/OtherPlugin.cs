@@ -13,13 +13,13 @@
 
         public void Initialize(CalculatorApplication application)
         {
-            Helper.ReportDomain("OtherPlugin");
-
+            Helper.ReportDomain();
             this.application = application;
         }
 
         public int Add(int left, int right)
         {
+            Helper.ReportDomain();
             return left + right;
         }
     }

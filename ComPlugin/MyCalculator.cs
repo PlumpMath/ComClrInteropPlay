@@ -6,7 +6,7 @@
     using System.IO;
     using System.Reflection;
     using System.Runtime.InteropServices;
-    
+
     [ComVisible(true)]
     [ProgId("ComPlugin.MyCalculator")]
     [Guid("2C1B9DAA-E436-43C2-9F77-3C48BA2F8537")]
@@ -17,10 +17,15 @@
 
         public void Initialize(CalculatorApplication application)
         {
-            Helper.ReportDomain("MyCalculator");
+            Helper.ReportDomain();
 
             this.application = application;
 
+            CreateSecondDomainAndAskApplicationToLoadPlugin();
+        }
+
+        private void CreateSecondDomainAndAskApplicationToLoadPlugin()
+        {
             this.secondaryApplicationDomain = new SecondaryApplicationDomainManager();
 
             this.secondaryApplicationDomain.InDomainObject.SmuggleApplication(
@@ -32,7 +37,11 @@
 
         public int Add(int left, int right)
         {
-            return left + right;
+            Helper.ReportDomain();
+
+            // Call an API on the application which uses the plugin we loaded
+            // from the wrong domain
+            return application.GetPlugin("ComPlugin.OtherPlugin").Add(left, right);
         }
     }
 
@@ -63,7 +72,7 @@
                     return assemblyOfTypeToCreateInSecondaryDomain;
                 }
 
-                return null; 
+                return null;
             };
 
             var inDomainObjectTemp = applicationDomain.CreateInstanceAndUnwrap(nameOfAssembly, typeToCreateInSecondaryDomain.FullName);
@@ -87,7 +96,7 @@
 
         public InDomainObject()
         {
-            Helper.ReportDomain("InDomainObject");
+            Helper.ReportDomain();
         }
 
         public void SmuggleApplication(IntPtr punkApplication)
@@ -108,9 +117,16 @@
 
     internal static class Helper
     {
-        public static void ReportDomain(string who)
+        public static void ReportDomain()
         {
-            Console.WriteLine("{0} loaded into: '{1}', CLR version '{2}'.", who, AppDomain.CurrentDomain.FriendlyName, Environment.Version);
+            const int THIS_STACK_FRAME = 0;
+            const int PREVIOUS_STACK_FRAME = THIS_STACK_FRAME + 1;
+
+            var st = new StackTrace();
+            var caller = st.GetFrame(PREVIOUS_STACK_FRAME);
+            var method = caller.GetMethod();
+
+            Console.WriteLine("{0}::{1} [Domain: '{2}', CLR version: '{3}']", method.DeclaringType.Name, method.Name, AppDomain.CurrentDomain.FriendlyName, Environment.Version);
         }
     }
 }
