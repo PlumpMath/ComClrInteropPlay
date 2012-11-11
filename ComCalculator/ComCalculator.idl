@@ -6,6 +6,12 @@
 
 import "oaidl.idl";
 import "ocidl.idl";
+
+// Forward declarations
+interface ICalculatorApplication;
+interface ITheCalculator;
+
+// Interfaces
 [
 	object,
 	uuid(8388A2A1-AEFF-4F07-97B3-4F67A4E3F450),
@@ -14,7 +20,7 @@ import "ocidl.idl";
 	pointer_default(unique)
 ]
 interface ICalculatorApplication : IDispatch{
-	[id(1)] HRESULT LoadPlugin([in] BSTR progId);
+	[id(1)] HRESULT GetPlugin([in] BSTR progId, [out, retval] ITheCalculator** result);
 	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
 };
 [
@@ -32,6 +38,8 @@ interface ITheCalculator : IDispatch{
 	uuid(C4456541-5B90-4051-88B5-5EC57A857ADF),
 	version(1.0),
 ]
+
+// Library
 library ComCalculatorLib
 {
 	importlib("stdole2.tlb");

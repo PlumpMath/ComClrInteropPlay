@@ -10,9 +10,18 @@ CCalculatorApplication::CCalculatorApplication()
 }
 
 
-STDMETHODIMP CCalculatorApplication::LoadPlugin(BSTR progId)
+STDMETHODIMP CCalculatorApplication::GetPlugin(BSTR progId, ITheCalculator** result)
 {
 	
+	// See if we've already loaded the plugin
+	auto existing = mPlugins.find(progId);
+
+	if ( existing != mPlugins.end() )
+	{
+		*result = existing->second;
+		return S_OK;
+	}	
+
 	// Load the plugin
 	CComPtr<ITheCalculator> calc;
 	CLSID addin;
@@ -22,11 +31,12 @@ STDMETHODIMP CCalculatorApplication::LoadPlugin(BSTR progId)
 	// Initialize it
 	CComQIPtr<ICalculatorApplication> application(this);
 	calc->Initialize(application);
+	
+	// Cache 	
+	mPlugins.insert(std::make_pair(progId, calc));
 
-	int addResult;
-
-	calc->Add(3, 4, &addResult);
-
+	// Make sure we detach the CComPtr for the plugin!
+	*result = calc.Detach();
 	return S_OK;
 }
 

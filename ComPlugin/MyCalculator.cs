@@ -97,7 +97,7 @@
 
         public void WreakHavoc()
         {
-            mApplication.LoadPlugin("ComPlugin.OtherPlugin");
+            mApplication.GetPlugin("ComPlugin.OtherPlugin");
         }
 
         public override object InitializeLifetimeService()

@@ -13,7 +13,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	application.CoCreateInstance(__uuidof(CalculatorApplication));
 
 	// Load the plugin
-	application->LoadPlugin(OLESTR("ComPlugin.MyCalculator"));
+	auto plugin1 = application->GetPlugin(OLESTR("ComPlugin.MyCalculator"));
+	auto plugin2 = application->GetPlugin(OLESTR("ComPlugin.MyCalculator"));
 
 	return 0;
 }

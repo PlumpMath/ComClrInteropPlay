@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Sun Nov 11 10:46:39 2012
+/* at Sun Nov 11 13:18:02 2012
  */
 /* Compiler settings for ComCalculator.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
@@ -92,6 +92,16 @@ extern "C"{
 #endif 
 
 
+/* interface __MIDL_itf_ComCalculator_0000_0000 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_ComCalculator_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_ComCalculator_0000_0000_v0_0_s_ifspec;
+
 #ifndef __ICalculatorApplication_INTERFACE_DEFINED__
 #define __ICalculatorApplication_INTERFACE_DEFINED__
 
@@ -107,8 +117,9 @@ EXTERN_C const IID IID_ICalculatorApplication;
     ICalculatorApplication : public IDispatch
     {
     public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE LoadPlugin( 
-            /* [in] */ BSTR progId) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetPlugin( 
+            /* [in] */ BSTR progId,
+            /* [retval][out] */ ITheCalculator **result) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
             /* [retval][out] */ BSTR *pVal) = 0;
@@ -171,9 +182,10 @@ EXTERN_C const IID IID_ICalculatorApplication;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *LoadPlugin )( 
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetPlugin )( 
             ICalculatorApplication * This,
-            /* [in] */ BSTR progId);
+            /* [in] */ BSTR progId,
+            /* [retval][out] */ ITheCalculator **result);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
             ICalculatorApplication * This,
@@ -215,8 +227,8 @@ EXTERN_C const IID IID_ICalculatorApplication;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICalculatorApplication_LoadPlugin(This,progId)	\
-    ( (This)->lpVtbl -> LoadPlugin(This,progId) ) 
+#define ICalculatorApplication_GetPlugin(This,progId,result)	\
+    ( (This)->lpVtbl -> GetPlugin(This,progId,result) ) 
 
 #define ICalculatorApplication_get_Name(This,pVal)	\
     ( (This)->lpVtbl -> get_Name(This,pVal) ) 

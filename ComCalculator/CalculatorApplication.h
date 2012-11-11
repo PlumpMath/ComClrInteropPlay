@@ -2,8 +2,8 @@
 
 #pragma once
 #include "resource.h"       // main symbols
-
-
+#include <map>
+#include <string>
 
 #include "ComCalculator_i.h"
 
@@ -23,6 +23,9 @@ class ATL_NO_VTABLE CCalculatorApplication :
 	public CComCoClass<CCalculatorApplication, &CLSID_CalculatorApplication>,
 	public IDispatchImpl<ICalculatorApplication, &IID_ICalculatorApplication, &LIBID_ComCalculatorLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
+private:
+	std::map<std::wstring, ITheCalculator*> mPlugins;
+
 public:
 	CCalculatorApplication();
 
@@ -48,10 +51,7 @@ public:
 	}
 
 public:
-
-
-
-	STDMETHOD(LoadPlugin)(BSTR progId);
+	STDMETHOD(GetPlugin)(BSTR progId, ITheCalculator** result);
 	STDMETHOD(get_Name)(BSTR* pVal);
 };
 
