@@ -22,7 +22,7 @@ namespace ComCalculator {
 
 		String^ GetDomain()
 		{
-			return AppDomain::CurrentDomain->FriendlyName;
+			return String::Format("{0} (CLR: {1})", AppDomain::CurrentDomain->FriendlyName, Environment::Version);
 		}
 
 		BSTR GetDomainBSTR()
