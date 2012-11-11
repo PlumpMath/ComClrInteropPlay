@@ -9,7 +9,7 @@ import "ocidl.idl";
 
 // Forward declarations
 interface ICalculatorApplication;
-interface ITheCalculator;
+interface ICalculatorPlugin;
 
 // Interfaces
 [
@@ -20,7 +20,7 @@ interface ITheCalculator;
 	pointer_default(unique)
 ]
 interface ICalculatorApplication : IDispatch{
-	[id(1)] HRESULT GetPlugin([in] BSTR progId, [out, retval] ITheCalculator** result);
+	[id(1)] HRESULT GetPlugin([in] BSTR progId, [out, retval] ICalculatorPlugin** result);
 	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
 };
 [
@@ -30,7 +30,7 @@ interface ICalculatorApplication : IDispatch{
 	nonextensible,
 	pointer_default(unique)
 ]
-interface ITheCalculator : IDispatch{
+interface ICalculatorPlugin : IDispatch{
 	[id(1)] HRESULT Initialize([in] ICalculatorApplication* application);
 	[id(2), helpstring("Adds two numbers")] HRESULT Add([in] int left, [in] int right, [out,retval] int* result);
 };
@@ -46,9 +46,9 @@ library ComCalculatorLib
 	[
 		uuid(31A18EE5-90F8-4C35-8861-67A2A2419036)		
 	]
-	coclass TheCalculator
+	coclass CalculatorPlugin
 	{
-		[default] interface ITheCalculator;
+		[default] interface ICalculatorPlugin;
 	};
 	[
 		uuid(66AEC723-FC7D-4C9A-BD8C-1AA7F7568AB9)		

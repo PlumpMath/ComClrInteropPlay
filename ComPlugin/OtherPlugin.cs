@@ -7,7 +7,7 @@
     [ComVisible(true)]
     [ProgId("ComPlugin.OtherPlugin")]
     [Guid("16398924-673F-4F2C-AA4B-E26013334266")]
-    public class OtherPlugin : ITheCalculator
+    public class OtherPlugin : ICalculatorPlugin
     {
         CalculatorApplication application;
 

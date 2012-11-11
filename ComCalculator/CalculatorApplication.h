@@ -24,7 +24,7 @@ class ATL_NO_VTABLE CCalculatorApplication :
 	public IDispatchImpl<ICalculatorApplication, &IID_ICalculatorApplication, &LIBID_ComCalculatorLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 private:
-	std::map<std::wstring, ITheCalculator*> mPlugins;
+	std::map<std::wstring, ICalculatorPlugin*> mPlugins;
 
 public:
 	CCalculatorApplication();
@@ -51,7 +51,7 @@ public:
 	}
 
 public:
-	STDMETHOD(GetPlugin)(BSTR progId, ITheCalculator** result);
+	STDMETHOD(GetPlugin)(BSTR progId, ICalculatorPlugin** result);
 	STDMETHOD(get_Name)(BSTR* pVal);
 };
 

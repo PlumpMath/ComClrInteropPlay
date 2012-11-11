@@ -10,7 +10,7 @@ CCalculatorApplication::CCalculatorApplication()
 }
 
 
-STDMETHODIMP CCalculatorApplication::GetPlugin(BSTR progId, ITheCalculator** result)
+STDMETHODIMP CCalculatorApplication::GetPlugin(BSTR progId, ICalculatorPlugin** result)
 {
 	
 	// See if we've already loaded the plugin
@@ -23,7 +23,7 @@ STDMETHODIMP CCalculatorApplication::GetPlugin(BSTR progId, ITheCalculator** res
 	}	
 
 	// Load the plugin
-	CComPtr<ITheCalculator> calc;
+	CComPtr<ICalculatorPlugin> calc;
 	CLSID addin;
 	HRESULT gotClassId = CLSIDFromProgID(progId, &addin);
 	HRESULT gotCalc = calc.CoCreateInstance(addin, NULL, CLSCTX_ALL);

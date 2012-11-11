@@ -136,7 +136,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TheCalculator.cpp" />
+    <ClCompile Include="CalculatorPlugin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalculatorApplication.h" />
@@ -145,7 +145,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TheCalculator.h" />
+    <ClInclude Include="CalculatorPlugin.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ComCalculator.rc" />
@@ -157,7 +157,7 @@
     <None Include="CalculatorApplication.rgs" />
     <None Include="ComCalculator.def" />
     <None Include="ComCalculator.rgs" />
-    <None Include="TheCalculator.rgs" />
+    <None Include="CalculatorPlugin.rgs" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ComCalculator.idl" />

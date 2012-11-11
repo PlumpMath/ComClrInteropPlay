@@ -17,48 +17,54 @@
       <UniqueIdentifier>{a4124d4c-ea89-46d4-b44f-ae0610eac544}</UniqueIdentifier>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Header Files\Infrastructure">
+      <UniqueIdentifier>{6be7269b-071d-4b59-83a9-c880f2e4c748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Infrastructure">
+      <UniqueIdentifier>{f5207bbb-38cd-431b-ae46-41590294307c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ComCalculator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ComCalculator_i.c">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="TheCalculator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CalculatorApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CalculatorPlugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files\Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files\Infrastructure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dllmain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ComCalculator_i.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="TheCalculator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CalculatorApplication.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculatorPlugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files\Infrastructure</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,14 +79,14 @@
     <None Include="ComCalculator.rgs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ComCalculator.def">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="TheCalculator.rgs">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="CalculatorApplication.rgs">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CalculatorPlugin.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ComCalculator.def">
+      <Filter>Source Files\Infrastructure</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

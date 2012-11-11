@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Sun Nov 11 13:18:02 2012
+/* at Sun Nov 11 13:36:18 2012
  */
 /* Compiler settings for ComCalculator.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
@@ -52,23 +52,23 @@ typedef interface ICalculatorApplication ICalculatorApplication;
 #endif 	/* __ICalculatorApplication_FWD_DEFINED__ */
 
 
-#ifndef __ITheCalculator_FWD_DEFINED__
-#define __ITheCalculator_FWD_DEFINED__
-typedef interface ITheCalculator ITheCalculator;
+#ifndef __ICalculatorPlugin_FWD_DEFINED__
+#define __ICalculatorPlugin_FWD_DEFINED__
+typedef interface ICalculatorPlugin ICalculatorPlugin;
 
-#endif 	/* __ITheCalculator_FWD_DEFINED__ */
+#endif 	/* __ICalculatorPlugin_FWD_DEFINED__ */
 
 
-#ifndef __TheCalculator_FWD_DEFINED__
-#define __TheCalculator_FWD_DEFINED__
+#ifndef __CalculatorPlugin_FWD_DEFINED__
+#define __CalculatorPlugin_FWD_DEFINED__
 
 #ifdef __cplusplus
-typedef class TheCalculator TheCalculator;
+typedef class CalculatorPlugin CalculatorPlugin;
 #else
-typedef struct TheCalculator TheCalculator;
+typedef struct CalculatorPlugin CalculatorPlugin;
 #endif /* __cplusplus */
 
-#endif 	/* __TheCalculator_FWD_DEFINED__ */
+#endif 	/* __CalculatorPlugin_FWD_DEFINED__ */
 
 
 #ifndef __CalculatorApplication_FWD_DEFINED__
@@ -119,7 +119,7 @@ EXTERN_C const IID IID_ICalculatorApplication;
     public:
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetPlugin( 
             /* [in] */ BSTR progId,
-            /* [retval][out] */ ITheCalculator **result) = 0;
+            /* [retval][out] */ ICalculatorPlugin **result) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
             /* [retval][out] */ BSTR *pVal) = 0;
@@ -185,7 +185,7 @@ EXTERN_C const IID IID_ICalculatorApplication;
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetPlugin )( 
             ICalculatorApplication * This,
             /* [in] */ BSTR progId,
-            /* [retval][out] */ ITheCalculator **result);
+            /* [retval][out] */ ICalculatorPlugin **result);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
             ICalculatorApplication * This,
@@ -244,19 +244,19 @@ EXTERN_C const IID IID_ICalculatorApplication;
 #endif 	/* __ICalculatorApplication_INTERFACE_DEFINED__ */
 
 
-#ifndef __ITheCalculator_INTERFACE_DEFINED__
-#define __ITheCalculator_INTERFACE_DEFINED__
+#ifndef __ICalculatorPlugin_INTERFACE_DEFINED__
+#define __ICalculatorPlugin_INTERFACE_DEFINED__
 
-/* interface ITheCalculator */
+/* interface ICalculatorPlugin */
 /* [unique][nonextensible][dual][uuid][object] */ 
 
 
-EXTERN_C const IID IID_ITheCalculator;
+EXTERN_C const IID IID_ICalculatorPlugin;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
     MIDL_INTERFACE("48A0E2FF-D8C8-4F4E-8389-0FD54E3BDC9A")
-    ITheCalculator : public IDispatch
+    ICalculatorPlugin : public IDispatch
     {
     public:
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialize( 
@@ -272,34 +272,34 @@ EXTERN_C const IID IID_ITheCalculator;
     
 #else 	/* C style interface */
 
-    typedef struct ITheCalculatorVtbl
+    typedef struct ICalculatorPluginVtbl
     {
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ITheCalculator * This,
+            ICalculatorPlugin * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ITheCalculator * This);
+            ICalculatorPlugin * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            ITheCalculator * This);
+            ICalculatorPlugin * This);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            ITheCalculator * This,
+            ICalculatorPlugin * This,
             /* [out] */ UINT *pctinfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            ITheCalculator * This,
+            ICalculatorPlugin * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
             /* [out] */ ITypeInfo **ppTInfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            ITheCalculator * This,
+            ICalculatorPlugin * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
             /* [range][in] */ UINT cNames,
@@ -307,7 +307,7 @@ EXTERN_C const IID IID_ITheCalculator;
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            ITheCalculator * This,
+            ICalculatorPlugin * This,
             /* [annotation][in] */ 
             _In_  DISPID dispIdMember,
             /* [annotation][in] */ 
@@ -326,21 +326,21 @@ EXTERN_C const IID IID_ITheCalculator;
             _Out_opt_  UINT *puArgErr);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
-            ITheCalculator * This,
+            ICalculatorPlugin * This,
             /* [in] */ ICalculatorApplication *application);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
-            ITheCalculator * This,
+            ICalculatorPlugin * This,
             /* [in] */ int left,
             /* [in] */ int right,
             /* [retval][out] */ int *result);
         
         END_INTERFACE
-    } ITheCalculatorVtbl;
+    } ICalculatorPluginVtbl;
 
-    interface ITheCalculator
+    interface ICalculatorPlugin
     {
-        CONST_VTBL struct ITheCalculatorVtbl *lpVtbl;
+        CONST_VTBL struct ICalculatorPluginVtbl *lpVtbl;
     };
 
     
@@ -348,33 +348,33 @@ EXTERN_C const IID IID_ITheCalculator;
 #ifdef COBJMACROS
 
 
-#define ITheCalculator_QueryInterface(This,riid,ppvObject)	\
+#define ICalculatorPlugin_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
-#define ITheCalculator_AddRef(This)	\
+#define ICalculatorPlugin_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
 
-#define ITheCalculator_Release(This)	\
+#define ICalculatorPlugin_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define ITheCalculator_GetTypeInfoCount(This,pctinfo)	\
+#define ICalculatorPlugin_GetTypeInfoCount(This,pctinfo)	\
     ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
-#define ITheCalculator_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+#define ICalculatorPlugin_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
     ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
-#define ITheCalculator_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+#define ICalculatorPlugin_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
     ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
-#define ITheCalculator_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+#define ICalculatorPlugin_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ITheCalculator_Initialize(This,application)	\
+#define ICalculatorPlugin_Initialize(This,application)	\
     ( (This)->lpVtbl -> Initialize(This,application) ) 
 
-#define ITheCalculator_Add(This,left,right,result)	\
+#define ICalculatorPlugin_Add(This,left,right,result)	\
     ( (This)->lpVtbl -> Add(This,left,right,result) ) 
 
 #endif /* COBJMACROS */
@@ -385,7 +385,7 @@ EXTERN_C const IID IID_ITheCalculator;
 
 
 
-#endif 	/* __ITheCalculator_INTERFACE_DEFINED__ */
+#endif 	/* __ICalculatorPlugin_INTERFACE_DEFINED__ */
 
 
 
@@ -398,12 +398,12 @@ EXTERN_C const IID IID_ITheCalculator;
 
 EXTERN_C const IID LIBID_ComCalculatorLib;
 
-EXTERN_C const CLSID CLSID_TheCalculator;
+EXTERN_C const CLSID CLSID_CalculatorPlugin;
 
 #ifdef __cplusplus
 
 class DECLSPEC_UUID("31A18EE5-90F8-4C35-8861-67A2A2419036")
-TheCalculator;
+CalculatorPlugin;
 #endif
 
 EXTERN_C const CLSID CLSID_CalculatorApplication;

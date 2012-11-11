@@ -1,4 +1,4 @@
-// TheCalculator.h : Declaration of the CTheCalculator
+// CalculatorPlugin.h : Declaration of the CCalculatorPlugin
 
 #pragma once
 #include "resource.h"       // main symbols
@@ -16,23 +16,23 @@
 using namespace ATL;
 
 
-// CTheCalculator
+// CCalculatorPlugin
 
-class ATL_NO_VTABLE CTheCalculator :
+class ATL_NO_VTABLE CCalculatorPlugin :
 	public CComObjectRootEx<CComSingleThreadModel>,
-	public CComCoClass<CTheCalculator, &CLSID_TheCalculator>,
-	public IDispatchImpl<ITheCalculator, &IID_ITheCalculator, &LIBID_ComCalculatorLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
+	public CComCoClass<CCalculatorPlugin, &CLSID_CalculatorPlugin>,
+	public IDispatchImpl<ICalculatorPlugin, &IID_ICalculatorPlugin, &LIBID_ComCalculatorLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 public:
-	CTheCalculator()
+	CCalculatorPlugin()
 	{
 	}
 
-DECLARE_REGISTRY_RESOURCEID(IDR_THECALCULATOR)
+DECLARE_REGISTRY_RESOURCEID(IDR_CalculatorPlugin)
 
 
-BEGIN_COM_MAP(CTheCalculator)
-	COM_INTERFACE_ENTRY(ITheCalculator)
+BEGIN_COM_MAP(CCalculatorPlugin)
+	COM_INTERFACE_ENTRY(ICalculatorPlugin)
 	COM_INTERFACE_ENTRY(IDispatch)
 END_COM_MAP()
 
@@ -54,4 +54,4 @@ public:
 	STDMETHOD(Initialize)(ICalculatorApplication* application);
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(TheCalculator), CTheCalculator)
+OBJECT_ENTRY_AUTO(__uuidof(CalculatorPlugin), CCalculatorPlugin)
