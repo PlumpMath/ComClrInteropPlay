@@ -23,7 +23,6 @@ STDMETHODIMP CCalculatorApplication::LoadPlugin(BSTR progId)
 	CComQIPtr<ICalculatorApplication> application(this);
 	calc->Initialize(application);
 
-
 	int addResult;
 
 	calc->Add(3, 4, &addResult);

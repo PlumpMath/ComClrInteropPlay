@@ -26,11 +26,13 @@
             this.secondaryApplicationDomain.InDomainObject.SmuggleApplication(
                     Marshal.GetIUnknownForObject(application)
             );
+
+            this.secondaryApplicationDomain.InDomainObject.WreakHavoc();
         }
 
         public int Add(int left, int right)
         {
-            return left + right * 10;
+            return left + right;
         }
     }
 
@@ -91,6 +93,11 @@
         public void SmuggleApplication(IntPtr punkApplication)
         {
             mApplication = (CalculatorApplication)Marshal.GetTypedObjectForIUnknown(punkApplication, typeof(CalculatorApplication));
+        }
+
+        public void WreakHavoc()
+        {
+            mApplication.LoadPlugin("ComPlugin.OtherPlugin");
         }
 
         public override object InitializeLifetimeService()
