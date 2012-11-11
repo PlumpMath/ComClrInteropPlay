@@ -18,12 +18,14 @@
         public void Initialize(CalculatorApplication application)
         {
             Helper.ReportDomain("MyCalculator");
-            this.application = application;
-            this.secondaryApplicationDomain = new SecondaryApplicationDomainManager();
-        }
 
-        private void InitializeSecondaryApplicationDomain()
-        {
+            this.application = application;
+
+            this.secondaryApplicationDomain = new SecondaryApplicationDomainManager();
+
+            this.secondaryApplicationDomain.InDomainObject.SmuggleApplication(
+                    Marshal.GetIUnknownForObject(application)
+            );
         }
 
         public int Add(int left, int right)
@@ -66,6 +68,11 @@
             inDomainObject = (InDomainObject)inDomainObjectTemp;
         }
 
+        public InDomainObject InDomainObject
+        {
+            get { return inDomainObject; }
+        }
+
         public override object InitializeLifetimeService()
         {
             return null;
@@ -74,9 +81,16 @@
 
     public class InDomainObject : MarshalByRefObject
     {
+        private CalculatorApplication mApplication;
+
         public InDomainObject()
         {
             Helper.ReportDomain("InDomainObject");
+        }
+
+        public void SmuggleApplication(IntPtr punkApplication)
+        {
+            mApplication = (CalculatorApplication)Marshal.GetTypedObjectForIUnknown(punkApplication, typeof(CalculatorApplication));
         }
 
         public override object InitializeLifetimeService()
